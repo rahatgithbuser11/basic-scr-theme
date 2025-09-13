@@ -1,0 +1,6 @@
+[environments.basic]
+store = "basic-scr-theme/main"
+store-password = "leetoh"
+theme = "basic-scr-theme/main"
+theme-editor-sync = ture
+
