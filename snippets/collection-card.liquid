@@ -1,0 +1,17 @@
+<div class="card">
+	{% if item.image.src %}
+		<img
+			src="{{ item.image.src | image_url }}"
+			width="auto"
+			height="auto"
+			class="card-img-top"
+			alt="..."
+		>
+	{% else %}
+		{{ 'collection-1' | placeholder_svg_tag }}
+	{% endif %}
+	<div class="card-body">
+		<h5 class="card-title">{{ item.title }}</h5>
+		<a href="{{ item.url }}" class="btn btn-primary">See more</a>
+	</div>
+</div>

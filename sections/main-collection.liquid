@@ -1,0 +1,174 @@
+<section class="p-5">
+	<div class="container">
+		<div class="row">
+			<div class="text-center p-5">
+				<h1>Collection</h1>
+			</div>
+		</div>
+		<div class="row border-bottom mb-4">
+			<div class="col-lg-9"></div>
+			<div class="col-lg-3 mb-4">
+				{% assign selected_option = collection.sort_by | default: collection.default_sort_by %}
+				<div>
+					Sort by:
+					<form action="">
+						<select name="sort_by" id="sort_by">
+							{% for option in collection.sort_options %}
+								<option
+									value="{{ option.value }}"
+									{% if selected_option == option.value %}
+										selected="selected"
+									{% endif %}
+								>
+									{{ option.name }}
+								</option>
+							{% endfor %}
+						</select>
+						{% comment %} <button type="submit">Submit</button> {% endcomment %}
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="d-flex justify-content-between">
+					<h2>Filter</h2>
+					<a href="{{ collection.url }}">Clear All</a>
+				</div>
+				<form>
+					{% for filter in collection.filters %}
+						<details>
+							<summary>{{ filter.label }}</summary>
+							<div>
+								{% case filter.type %}
+									{% when 'boolean' %}
+										<p>Boolen</p>
+									{% when 'list' %}
+										<div class="d-flex justify-content-between border-bottom">
+											<span>{{ filter.active_values.size }} selected</span>
+											<span>
+												<a href="{{ filter.url_to_remove }}">Reset</a>
+											</span>
+										</div>
+										<ul>
+											{% for filter_value in filter.values %}
+												<li>
+													<label for="filter-{{ filter.param_name }}-{{ forloop.index }}">
+														<input
+															type="checkbox"
+															name="{{ filter.param_name }}"
+															value="{{ filter_value.value }}"
+															id="filter-{{ filter.param_name }}-{{ forloop.index }}"
+															{% if filter_value.active %}
+																checked
+															{% endif %}
+														>
+														{{ filter_value.label }} </label
+													>({{ filter_value.count }})
+												</li>
+											{% endfor %}
+										</ul>
+										<input type="submit" value="submit">
+									{% when 'price_range' %}
+										<a href="{{ filter.url_to_remove }}">Reset</a>
+										<div>
+											{{ cart.currency.symbol }}
+											<input
+												type="number"
+												placeholder="0"
+												min="0"
+												name="{{ filter.min_value.param_name }}"
+												value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+											>
+										</div>
+										-
+										<div>
+											{{ cart.currency.symbol }}
+											<input
+												type="number"
+												placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+												min="0"
+												max="{{ filter.range_max | money_without_currency }}"
+												name="{{ filter.max_value.param_name }}"
+												value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+											>
+										</div>
+										<input type="submit" value="submit">
+									{% else %}
+
+								{% endcase %}
+							</div>
+						</details>
+
+						<br>
+					{% endfor %}
+				</form>
+				<h2 class="border-top border-bottom">Tag filtering</h2>
+				<div>
+					<style>
+						.active a {
+							color: red;
+						}
+					</style>
+					{% if collection.all_tags.size > 0 %}
+						{% for tag in collection.all_tags %}
+							{% if current_tags contains tag %}
+								<p class="active">{{ tag | link_to_remove_tag: tag }}</p>
+							{% else %}
+								<p>{{ tag | link_to_add_tag: tag }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-lg-9">
+				<div class="row">
+					{% paginate collection.products by 8 %}
+						{% for product in collection.products %}
+							<div class="col-lg-3 mb-4">
+								{% render 'product-card', product: product %}
+							</div>
+						{% endfor %}
+						<div class="text-center">
+							{{ paginate | default_pagination }}
+						</div>
+					{% endpaginate %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// {'sort_by': 'value', ...}
+	Shopify.queryParams = {}
+	if (location.search.length) {
+		const params = location.search.substr(1).split('&') // ['sort_by=price-descending','filter=stock']
+		for (var i = 0; i < params.length; i++) {
+			var keyValue = params[i].split('=') // ['sort_by', 'value']
+
+			if (keyValue.length) {
+				Shopify.queryParams[keyValue[0]] = keyValue[1]
+			}
+		}
+	}
+	const selectElm = document.querySelector('#sort_by')
+	selectElm.addEventListener('change', function (e) {
+		var slectedOption = e.target.value
+		Shopify.queryParams.sort_by = slectedOption
+		location.search = new URLSearchParams(Shopify.queryParams).toString()
+	})
+</script>
+
+{% schema %}
+{
+	"name": "Colection",
+	"class": "lwt-collection",
+	"settings": [],
+	"presets": [
+		{
+			"name": "Colection"
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+{
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4,
+    "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
+    },
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "liquid": "html"
+    },
+    "[liquid]": {
+      "editor.defaultFormatter": "Shopify.theme-check-vscode",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
+    },
+    "themeCheck.checkOnSave": true
+}
