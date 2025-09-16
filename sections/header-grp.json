@@ -7,30 +7,18 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-
 {
+  "type": "header",
+  "name": "Header",
   "sections": {
-    "banner": {
-      "type": "banner",
-      "settings": {}
-    },
-    "featured_collcetion": {
-      "type": "featured-collection",
+    "header": {
+      "type": "header",
       "settings": {
-        "col_num": 4
-      }
-    },
-    "featured_collcetion_product": {
-      "type": "featured-collection-product",
-      "settings": {
-        "padding": 100,
-        "collection": "automated-collection"
+        "menu": "header-menu"
       }
     }
   },
   "order": [
-    "banner",
-    "featured_collcetion",
-    "featured_collcetion_product"
+    "header"
   ]
 }

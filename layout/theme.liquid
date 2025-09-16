@@ -9,7 +9,7 @@
 		<title>{{ page_title }}</title>
 		{% comment %} all css {% endcomment %}
 		{{ 'boostrap.css' | asset_url | stylesheet_tag }}
-		{{ 'style.css' | | asset_url | | stylesheet_tag }}
+		{{ 'style.css' | asset_url | stylesheet_tag }}
 		{{ content_for_header }}
 	</head>
 	<body
