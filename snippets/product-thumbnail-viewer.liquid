@@ -1,0 +1,33 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_media = current_variant.featured_media | default: product.featured_image %}
+<div class="lwt-thumbnail-viewer">
+	{% if current_variant.featured_media != null %}
+		<div class="lwt-thumbnail active" data-media-target="{{ featured_media.id }}">
+			<img
+				src="{{ featured_media.preview_image.src | image_url: width: 500 }}"
+				width="500"
+				height="auto"
+				alt="{{ featured_media.preview_image.alt }}"
+				id="thumbnail"
+				class="w-100"
+			>
+		</div>
+	{% endif %}
+	{% for media in product.media %}
+		{% unless media.id == current_variant.featured_media.id %}
+			<div
+				class="lwt-thumbnail{% if current_variant.featured_media == nil and forloop.index == 1 %} active{% endif %}"
+				data-media-target="{{ media.id }}"
+			>
+				<img
+					src="{{ media.src | image_url: width: 500 }}"
+					width="500"
+					height="auto"
+					alt="{{ media.alt }}"
+					id="thumbnail"
+					class="w-100"
+				>
+			</div>
+		{% endunless %}
+	{% endfor %}
+</div>
