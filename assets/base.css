@@ -1,4 +1,4 @@
-/* Color custom properties */
+
 
 :root,
 .color-background-1 {
@@ -845,7 +845,19 @@ summary::-webkit-details-marker {
 /*
   Focus ring - default (with offset)
 */
-
+.title-box {
+  display: inline-block;
+  /* shrink box to text width */
+  border: 2px solid #000;
+  /* black border */
+  padding: 10px 20px;
+  /* space inside the box */
+  border-radius: 8px;
+  /* optional rounded corners */
+  background-color: #fff;
+  /* optional background */
+  text-align: center;
+}
 *:focus {
   outline: 0;
   box-shadow: none;
