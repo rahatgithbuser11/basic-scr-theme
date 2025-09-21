@@ -16,6 +16,8 @@
 		id="{{ page_title | handleize }}"
 		class="{{ template }} {% if template.name == 'product' %}{{ product.handle }}{% endif %} {% if template.name == 'collection' %}{{ collection.handle }}{% endif %}"
 	>
+		{% section 'flash-sale-banner' %}
+
 		{% comment %} header {% endcomment %}
 		{% comment %} test {% endcomment %}
 		{% sections 'header-group' %}

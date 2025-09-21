@@ -1,0 +1,154 @@
+{% schema %}
+{
+	"name": "Flash Sale Banner",
+	"settings": [
+		{
+			"type": "text",
+			"id": "banner_text",
+			"label": "Banner Text",
+			"default": "Up to 50% off selected products!"
+		},
+		{
+			"type": "text",
+			"id": "end_date",
+			"label": "Sale End Date (YYYY-MM-DD HH:MM:SS)",
+			"default": "2025-12-31 23:59:59"
+		},
+		{
+			"type": "color",
+			"id": "background_color",
+			"label": "Background Color",
+			"default": "#F7E7CE"
+		},
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "Text Color",
+			"default": "#333333"
+		},
+		{
+			"type": "color",
+			"id": "countdown_color",
+			"label": "Countdown Color",
+			"default": "#D32F2F"
+		},
+		{
+			"type": "url",
+			"id": "button_link",
+			"label": "Button Link",
+			"default": "/collections/all"
+		},
+		{
+			"type": "text",
+			"id": "button_text",
+			"label": "Button Text",
+			"default": "Shop Now"
+		},
+		{
+			"type": "color",
+			"id": "button_background",
+			"label": "Button Background Color",
+			"default": "#333333"
+		},
+		{
+			"type": "color",
+			"id": "button_text_color",
+			"label": "Button Text Color",
+			"default": "#F7E7CE"
+		}
+	],
+	"presets": [
+		{
+			"name": "Flash Sale Banner",
+			"category": "Custom"
+		}
+	]
+}
+{% endschema %}
+
+<div
+	class="flash-sale-banner"
+	style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};"
+>
+	<h2 style="color: {{ section.settings.text_color }};">{{ section.settings.banner_text }}</h2>
+	<div id="countdown" class="countdown-timer" style="color: {{ section.settings.countdown_color }};"></div>
+	<a
+		href="{{ section.settings.button_link }}"
+		class="flash-sale-button"
+		style="background-color: {{ section.settings.button_background }}; color: {{ section.settings.button_text_color }};"
+	>
+		{{ section.settings.button_text }}
+	</a>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const countdownElement = document.getElementById('countdown')
+		const endDate = new Date('{{ section.settings.end_date }}').getTime()
+
+		function updateCountdown() {
+			const now = new Date().getTime()
+			const distance = endDate - now
+
+			if (distance < 0) {
+				countdownElement.innerHTML = 'Sale Ended!'
+				return
+			}
+
+			const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+			const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+			const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+			const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+			countdownElement.innerHTML = `
+        <strong>${days}</strong> Days 
+        <strong>${hours}</strong> Hours 
+        <strong>${minutes}</strong> Minutes 
+        <strong>${seconds}</strong> Seconds
+      `
+		}
+
+		updateCountdown()
+		setInterval(updateCountdown, 1000)
+	})
+</script>
+
+<style>
+	.flash-sale-banner {
+		text-align: center;
+		padding: 30px;
+		font-family: 'Helvetica Neue', sans-serif;
+		border: 2px solid #333333;
+		margin: 40px 0;
+		border-radius: 10px;
+	}
+
+	.flash-sale-banner h2 {
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+
+	.countdown-timer {
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
+
+	.countdown-timer strong {
+		font-weight: bold;
+		margin: 0 6px;
+	}
+
+	.flash-sale-button {
+		display: inline-block;
+		padding: 12px 24px;
+		font-size: 16px;
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 5px;
+		transition: background-color 0.3s ease;
+	}
+
+	.flash-sale-button:hover {
+		opacity: 0.85;
+	}
+</style>
