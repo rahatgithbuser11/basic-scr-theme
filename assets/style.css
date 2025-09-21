@@ -1,7 +1,5 @@
-a.navbar-brand img {
-    width: 45px !important;
-}
 .title-box {
+    
     display: center;
     /* shrink box to text width */
     border: 2px solid #000;
@@ -10,7 +8,13 @@ a.navbar-brand img {
     /* space inside the box */
     border-radius: 8px;
     /* optional rounded corners */
-    background-color: #be3c3c;
+    background-color: #45beae;
     /* optional background */
     text-align: center; 
+}
+
+.my-2 {
+    color: aliceblue;
+    margin-top: .5rem !important;
+    margin-bottom: .5rem !important;
 }
