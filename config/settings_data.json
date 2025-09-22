@@ -10,22 +10,6 @@
 {
   "current": {
     "logo": "shopify://shop_images/alexa.svg",
-    "sections": {
-      "flash-sale-banner": {
-        "type": "flash-sale-banner",
-        "settings": {
-          "banner_text": "Up to 50% off selected products!",
-          "end_date": "2025-12-31 23:59:59",
-          "background_color": "#000000",
-          "text_color": "#ffffff",
-          "countdown_color": "#dedede",
-          "button_link": "shopify://collections/all",
-          "button_text": "Shop Now",
-          "button_background": "#e1f20f",
-          "button_text_color": "#000000"
-        }
-      }
-    },
     "content_for_index": []
   }
 }
