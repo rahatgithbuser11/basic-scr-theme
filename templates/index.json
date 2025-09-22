@@ -15,9 +15,7 @@
     },
     "featured_collcetion": {
       "type": "featured-collection",
-      "settings": {
-        "col_num": 4
-      }
+      "settings": {}
     },
     "featured_collcetion_product": {
       "type": "featured-collection-product",
