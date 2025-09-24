@@ -109,51 +109,20 @@
 		</div>
 	</div>
 </nav>
-
 {% schema %}
 {
 	"name": "Header",
-	"class": "rahat-header",
 	"settings": [
 		{
 			"type": "link_list",
 			"id": "menu",
-			"label": "Menu"
+			"label": "Main Menu"
+		},
+		{
+			"type": "image_picker",
+			"id": "logo",
+			"label": "Logo"
 		}
 	]
 }
 {% endschema %}
-<nav class="main-navbar">
-	<ul class="nav-menu">
-		<li><a href="{{ routes.root_url }}">Home</a></li>
-		<li><a href="{{ routes.collections_url }}">Collection</a></li>
-		<li><a href="/pages/about-us">About Us</a></li>
-	</ul>
-</nav>
-
-<style>
-	.main-navbar {
-		background-color: #fff;
-		padding: 15px 30px;
-		border-bottom: 1px solid #eee;
-	}
-
-	.nav-menu {
-		list-style: none;
-		display: flex;
-		gap: 30px;
-		margin: 0;
-		padding: 0;
-	}
-
-	.nav-menu li a {
-		text-decoration: none;
-		color: #333;
-		font-weight: 600;
-		transition: color 0.3s ease;
-	}
-
-	.nav-menu li a:hover {
-		color: #007acc;
-	}
-</style>
