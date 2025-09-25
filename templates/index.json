@@ -16,18 +16,10 @@
     "featured_collcetion": {
       "type": "featured-collection",
       "settings": {}
-    },
-    "featured_collcetion_product": {
-      "type": "featured-collection-product",
-      "settings": {
-        "padding": 100,
-        "collection": "automated-collection"
-      }
     }
   },
   "order": [
     "banner",
-    "featured_collcetion",
-    "featured_collcetion_product"
+    "featured_collcetion"
   ]
 }
