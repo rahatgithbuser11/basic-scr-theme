@@ -11,83 +11,20 @@
 		{{ 'boostrap.css' | asset_url | stylesheet_tag }}
 		{{ 'style.css' | asset_url | stylesheet_tag }}
 		{{ content_for_header }}
-		{% section 'static-navbar' %}
 	</head>
 	<body
 		id="{{ page_title | handleize }}"
 		class="{{ template }} {% if template.name == 'product' %}{{ product.handle }}{% endif %} {% if template.name == 'collection' %}{{ collection.handle }}{% endif %}"
 	>
-		{% section 'flash-sale-banner' %}
-
 		{% comment %} header {% endcomment %}
 		{% comment %} test {% endcomment %}
-		{% sections 'header-group' %}
+
 		<main>
 			{{ content_for_layout }}
 		</main>
-		{% sections 'footer-group' %}
+
 		{% comment %} all js {% endcomment %}
 		<script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'popper.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'bootstrap.min.js' | asset_url }}" defer="defer"></script>
-		{% if template.name == 'product' and product.has_only_default_variant == false %}
-			<script src="{{ 'option_selection.js' | shopify_asset_url }}" defer="defer"></script>
-			<script
-				defer="defer"
-			>
-					document.addEventListener('DOMContentLoaded', event => {
-					                {% comment %} claaback function {% endcomment %}
-					                var selectCallback = function (variant, selector) {
-					                    if(variant){
-			                                      console.log(variant);
-			                                      console.log(selector);
-					                                    // variant
-					                                                if(variant.available){
-					                                                    $('#add-to-cart-btn').removeAttr('disabled').val('Add to Cart')
-					                                                } else {
-					                                                    $('#add-to-cart-btn').val('Sold Out')
-					                                                }
-			                                                              // update price
-			                                                              if(variant.compare_at_price > variant.price){
-			                                                                  $('#varint-price').html(`
-			                                                                          <span class="sale-price">${Shopify.formatMoney(variant.price, '{{ shop.money_with_currency_format }}')} </span>
-			                                                                          <s>
-			                                                                              <span class="compare-price">${Shopify.formatMoney(variant.compare_at_price, '{{ shop.money_with_currency_format }}')}</span>
-			                                                                          </s>
-			                                                                      `)
-			                                                              } else {
-			                                                                  $('#varint-price').html(`
-			                                                                      <span class="regular-price">${Shopify.formatMoney(variant.price, '{{ shop.money_with_currency_format }}')}</span>
-			                                                                  `)
-			                                                              }
-			                                                              // update image
-			                                                              if(variant.featured_media){
-			                                                                  var srcImg = variant.featured_media.preview_image.src
-                                                                              var srcImgID = variant.featured_media.id
-                                                                              console.log(srcImgID);
-                                                                              {% comment %} thumbnail {% endcomment %}
-                                                                              $('[data-media-target]').removeClass('active')
-                                                                              $('[data-media-target="'+srcImgID+'"]').addClass('active')
-                                                                              {% comment %} gallery {% endcomment %}
-                                                                              $('[data-media-id]').removeClass('active')
-                                                                              $('[data-media-id="'+srcImgID+'"]').addClass('active')
-			                                                                  {% comment %} $('#thumbnail').attr('src', srcImg); {% endcomment %}
-			                                                              }
-					                                } else {
-					                                    // variant does not exists
-					                                    $('#add-to-cart-btn').val('Unavailable').attr('disabled', 'disabled')
-					                                }
-					                }
-					                {% comment %} initialize option selector {% endcomment %}
-					                 jQuery(function($){
-					                    new Shopify.OptionSelectors('varint-select', {
-					                        product: {{ product | json }},
-					                        onVariantSelected: selectCallback,
-			                                      enableHistoryState: true
-					                    });
-					                })
-					            })
-			</script>
-		{% endif %}
-	</body>
-</html>
+		
