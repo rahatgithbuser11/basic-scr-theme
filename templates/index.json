@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "1758794408d27a305f": {
+      "type": "_blocks",
+      "settings": {}
+    },
     "banner": {
       "type": "banner",
       "settings": {}
@@ -16,18 +20,11 @@
     "featured_collcetion": {
       "type": "featured-collection",
       "settings": {}
-    },
-    "featured_collcetion_product": {
-      "type": "featured-collection-product",
-      "settings": {
-        "padding": 100,
-        "collection": "automated-collection"
-      }
     }
   },
   "order": [
+    "1758794408d27a305f",
     "banner",
-    "featured_collcetion",
-    "featured_collcetion_product"
+    "featured_collcetion"
   ]
 }
