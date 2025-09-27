@@ -27,11 +27,19 @@
         "product_1": "Product 1",
         "product_2": "Product 2"
       }
+    },
+    "footer_ih43Rw": {
+      "type": "footer",
+      "name": "Default",
+      "settings": {
+        "footer": "footer"
+      }
     }
   },
   "order": [
     "1758794408d27a305f",
     "featured_collcetion",
-    "r_product_bFKAcB"
+    "r_product_bFKAcB",
+    "footer_ih43Rw"
   ]
 }
