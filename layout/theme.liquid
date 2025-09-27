@@ -9,6 +9,7 @@
 		<title>{{ page_title }}</title>
 		{% comment %} all css {% endcomment %}
 		{{ 'boostrap.css' | asset_url | stylesheet_tag }}
+		{{ 'base.css' | asset_url | stylesheet_tag }}
 		{{ 'style.css' | asset_url | stylesheet_tag }}
 		{{ content_for_header }}
 	</head>
@@ -27,4 +28,71 @@
 		<script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'popper.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'bootstrap.min.js' | asset_url }}" defer="defer"></script>
+
+		{% comment %}
+  Auto-generated layout template
+{% endcomment %}
 		
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ content_for_header }}
+  </head>
+  <body>
+    <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Practice Landing Page</title><link rel="stylesheet" href="{{ section.settings.style_css }}"></head><body><header class="{% if section.settings.hero_class %}hero{% endif %}"><h1>Welcome to My Practice Store</h1><p>Learn how to convert HTML to Shopify Liquid</p><a href="{{ section.settings._products }}" class="{% if section.settings.btn_class %}btn{% endif %}">Shop Now</a></header><section id="products" class="{% if section.settings.products_class %}products{% endif %}"><h2>Featured Products</h2><div class="{% if section.settings.product-grid_class %}product-grid{% endif %}"><div class="{% if section.settings.product-card_class %}product-card{% endif %}"><img src="{{ section.settings.https___via_placeholder_com_300 }}" alt="{{ section.settings.product_1 }}"><h3>Product 1</h3><p>$29.99</p></div><div class="{% if section.settings.product-card_class %}product-card{% endif %}"><img src="{{ section.settings.https___via_placeholder_com_300 }}" alt="{{ section.settings.product_2 }}"><h3>Product 2</h3><p>$39.99</p></div></div></section><footer class="{% if section.settings.footer_class %}footer{% endif %}"><p>&copy; 2025 My Practice Store</p></footer></body></html>
+    
+ 
+
+
+<style>
+		
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background: #f5f5f5;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero .btn {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 200px;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+		
+		
+		</style>
+</body>
+</html> 
