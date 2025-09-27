@@ -13,18 +13,25 @@
       "type": "_blocks",
       "settings": {}
     },
-    "banner": {
-      "type": "banner",
-      "settings": {}
-    },
     "featured_collcetion": {
       "type": "featured-collection",
       "settings": {}
+    },
+    "r_product_bFKAcB": {
+      "type": "r-product",
+      "name": "Default",
+      "settings": {
+        "products": "products",
+        "product_grid": "product-grid",
+        "product_card": "product-card",
+        "product_1": "Product 1",
+        "product_2": "Product 2"
+      }
     }
   },
   "order": [
     "1758794408d27a305f",
-    "banner",
-    "featured_collcetion"
+    "featured_collcetion",
+    "r_product_bFKAcB"
   ]
 }
