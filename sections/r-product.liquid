@@ -8,11 +8,17 @@
 			>
 			<h3>Product 1</h3>
 			<p>$29.99</p>
+			<a href="#products" class="btn">Buy</a>
 		</div>
+
 		<div class="product-card">
-			<imgsrc="https://static.vecteezy.com/system/resources/thumbnails/069/860/804/small/glossy-mustard-yellow-coffee-pouch-packaging-free-photo.jpg" alt="Product 2">
+			<img
+				src="https://static.vecteezy.com/system/resources/thumbnails/069/860/804/small/glossy-mustard-yellow-coffee-pouch-packaging-free-photo.jpg"
+				alt="Product 2"
+			>
 			<h3>Product 2</h3>
 			<p>$39.99</p>
+			<a href="#products" class="btn">Buy</a>
 		</div>
 	</div>
 </section>
@@ -40,6 +46,30 @@
 		},
 		{
 			"type": "text",
+			"id": "btn",
+			"label": "Btn",
+			"default": "btn"
+		},
+		{
+			"type": "text",
+			"id": "image_url_1",
+			"label": "Product Image URL 1",
+			"default": "https://static.vecteezy.com/system/resources/thumbnails/071/003/805/small/blank-white-coffee-pouch-mockup-packaging-design-template-photo.jpg"
+		},
+		{
+			"type": "text",
+			"id": "image_url_2",
+			"label": "Product Image URL 2",
+			"default": "https://static.vecteezy.com/system/resources/thumbnails/069/860/804/small/glossy-mustard-yellow-coffee-pouch-packaging-free-photo.jpg"
+		},
+		{
+			"type": "text",
+			"id": "products_text",
+			"label": "#products",
+			"default": "#products"
+		},
+		{
+			"type": "text",
 			"id": "product_1",
 			"label": "Product 1",
 			"default": "Product 1"
@@ -52,7 +82,7 @@
 		}
 	],
 	"blocks": [],
-	"max_blocks": 3,
+	"max_blocks": 1,
 	"presets": [
 		{
 			"name": "Default",
@@ -60,6 +90,10 @@
 				"products": "products",
 				"product_grid": "product-grid",
 				"product_card": "product-card",
+				"btn": "btn",
+				"image_url_1": "https://static.vecteezy.com/system/resources/thumbnails/071/003/805/small/blank-white-coffee-pouch-mockup-packaging-design-template-photo.jpg",
+				"image_url_2": "https://static.vecteezy.com/system/resources/thumbnails/069/860/804/small/glossy-mustard-yellow-coffee-pouch-packaging-free-photo.jpg",
+
 				"product_1": "Product 1",
 				"product_2": "Product 2"
 			}
