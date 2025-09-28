@@ -34,12 +34,22 @@
       "settings": {
         "footer": "footer"
       }
+    },
+    "header_4xDwQU": {
+      "type": "header",
+      "name": "Default",
+      "settings": {
+        "hero": "hero",
+        "btn": "btn",
+        "products": "#products"
+      }
     }
   },
   "order": [
     "1758794408d27a305f",
     "featured_collcetion",
     "r_product_bFKAcB",
-    "footer_ih43Rw"
+    "footer_ih43Rw",
+    "header_4xDwQU"
   ]
 }
