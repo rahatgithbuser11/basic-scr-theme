@@ -19,39 +19,4 @@
             }
         ]
     },
-     
-    {
-            "name": "footer",
-            "settings": [
-      {
-        "type": "text",
-        "id": "footer_text",
-        "label": "Footer text",
-        "default": "© 2025 My Practice Store"
-      },
-      {
-        "type": "color",
-        "id": "footer_bg",
-        "label": "Footer background color",
-        "default": "#1297bd"
-      },
-      {
-        "type": "color",
-        "id": "footer_text_color",
-        "label": "Footer text color",
-        "default": "#ffffff"
-      },
-      {
-      "type": "select",
-      "id": "footer_alignment",
-      "label": "Footer text alignment",
-      "default": "center",
-      "options": [
-        { "value": "left",   "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right",  "label": "Right" }
-    ]
-    }
-    ]
-    }
-]
+  ]  
