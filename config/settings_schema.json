@@ -40,7 +40,18 @@
         "id": "footer_text_color",
         "label": "Footer text color",
         "default": "#ffffff"
-      }
+      },
+      {
+      "type": "select",
+      "id": "footer_alignment",
+      "label": "Footer text alignment",
+      "default": "center",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+    ]
+    }
     ]
     }
 ]
