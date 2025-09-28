@@ -11,7 +11,10 @@
   "sections": {
     "featured_collcetion": {
       "type": "featured-collection",
-      "settings": {}
+      "settings": {
+        "collection": "featured-products",
+        "products_to_show": 3
+      }
     },
     "header_DLtDnh": {
       "type": "header",
