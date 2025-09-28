@@ -13,38 +13,42 @@
       "type": "featured-collection",
       "settings": {}
     },
-    "header_PxjrQL": {
+    "footer_JEUatb": {
+      "type": "footer",
+      "name": "Footer Section",
+      "settings": {
+        "footer": "footer"
+      }
+    },
+    "header_9AazQC": {
       "type": "header",
-      "name": "Default",
+      "name": "Header Section",
       "settings": {
         "hero": "hero",
         "btn": "btn",
         "products": "#products"
       }
     },
-    "r_product_694AU3": {
+    "r_product_JPWzHa": {
       "type": "r-product",
-      "name": "Default",
+      "name": "featured section",
       "settings": {
         "products": "products",
         "product_grid": "product-grid",
         "product_card": "product-card",
+        "btn": "btn",
+        "image_url_1": "https://static.vecteezy.com/system/resources/thumbnails/071/003/805/small/blank-white-coffee-pouch-mockup-packaging-design-template-photo.jpg",
+        "image_url_2": "https://static.vecteezy.com/system/resources/thumbnails/069/860/804/small/glossy-mustard-yellow-coffee-pouch-packaging-free-photo.jpg",
+        "products_text": "#products",
         "product_1": "Product 1",
         "product_2": "Product 2"
-      }
-    },
-    "footer_yiMDVA": {
-      "type": "footer",
-      "name": "Default",
-      "settings": {
-        "footer": "footer"
       }
     }
   },
   "order": [
     "featured_collcetion",
-    "header_PxjrQL",
-    "r_product_694AU3",
-    "footer_yiMDVA"
+    "header_9AazQC",
+    "r_product_JPWzHa",
+    "footer_JEUatb"
   ]
 }
