@@ -7,20 +7,22 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-
-
- 
 {
   "sections": {
-    "1758794408d27a305f": {
-      "type": "_blocks",
-      "settings": {}
-    },
     "featured_collcetion": {
       "type": "featured-collection",
       "settings": {}
     },
-    "r_product_bFKAcB": {
+    "header_PxjrQL": {
+      "type": "header",
+      "name": "Default",
+      "settings": {
+        "hero": "hero",
+        "btn": "btn",
+        "products": "#products"
+      }
+    },
+    "r_product_694AU3": {
       "type": "r-product",
       "name": "Default",
       "settings": {
@@ -31,28 +33,18 @@
         "product_2": "Product 2"
       }
     },
-    "footer_ih43Rw": {
+    "footer_yiMDVA": {
       "type": "footer",
       "name": "Default",
       "settings": {
         "footer": "footer"
       }
-    },
-    "header_4xDwQU": {
-      "type": "header",
-      "name": "Default",
-      "settings": {
-        "hero": "hero",
-        "btn": "btn",
-        "products": "#products"
-      }
     }
   },
   "order": [
-    "1758794408d27a305f",
     "featured_collcetion",
-    "r_product_bFKAcB",
-    "footer_ih43Rw",
-    "header_4xDwQU"
+    "header_PxjrQL",
+    "r_product_694AU3",
+    "footer_yiMDVA"
   ]
 }
