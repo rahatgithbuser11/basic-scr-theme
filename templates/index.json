@@ -13,14 +13,7 @@
       "type": "featured-collection",
       "settings": {}
     },
-    "footer_JEUatb": {
-      "type": "footer",
-      "name": "Footer Section",
-      "settings": {
-        "footer": "footer"
-      }
-    },
-    "header_9AazQC": {
+    "header_DLtDnh": {
       "type": "header",
       "name": "Header Section",
       "settings": {
@@ -29,7 +22,7 @@
         "products": "#products"
       }
     },
-    "r_product_JPWzHa": {
+    "r_product_cVA8hP": {
       "type": "r-product",
       "name": "featured section",
       "settings": {
@@ -39,16 +32,25 @@
         "btn": "btn",
         "image_url_1": "https://static.vecteezy.com/system/resources/thumbnails/071/003/805/small/blank-white-coffee-pouch-mockup-packaging-design-template-photo.jpg",
         "image_url_2": "https://static.vecteezy.com/system/resources/thumbnails/069/860/804/small/glossy-mustard-yellow-coffee-pouch-packaging-free-photo.jpg",
+        "image_url_3": "https://static.vecteezy.com/system/resources/thumbnails/066/851/419/small/two-kraft-bags-floating-dynamic-mockup-photo.jpg",
         "products_text": "#products",
         "product_1": "Product 1",
-        "product_2": "Product 2"
+        "product_2": "Product 2",
+        "product_3": "Product 3"
+      }
+    },
+    "footer_999Fi7": {
+      "type": "footer",
+      "name": "Default",
+      "settings": {
+        "footer": "footer"
       }
     }
   },
   "order": [
     "featured_collcetion",
-    "header_9AazQC",
-    "r_product_JPWzHa",
-    "footer_JEUatb"
+    "header_DLtDnh",
+    "r_product_cVA8hP",
+    "footer_999Fi7"
   ]
 }
