@@ -18,21 +18,21 @@ body {
 }
 
 .products {
-    padding: 40px 20px;
+    padding: 10px 20px;
     text-align: center;
 }
 
 .product-grid {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .product-card {
-    border: 2px solid #ccc;
-    padding: 20px;
-    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
 }
 
 .footer {
@@ -42,6 +42,31 @@ body {
     padding: 20px;
 }
 
-h2{
-    color: rgb(207, 162, 15);
+/* Wrap the cards in a grid or flex layout */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* space between cards */
+    justify-content: center;
+}
+
+/* Each card */
+.product-card {
+    flex: 1 1 250px;
+    /* grow, shrink, base width */
+    max-width: 300px;
+    /* optional */
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 16px;
+    background: #fff;
+}
+
+/* Constrain images */
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

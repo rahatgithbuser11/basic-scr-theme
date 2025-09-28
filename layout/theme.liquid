@@ -12,6 +12,7 @@
 		{{ 'base.css' | asset_url | stylesheet_tag }}
 		{{ 'style.css' | asset_url | stylesheet_tag }}
 		{{ content_for_header }}
+        {%  section 'header' %} 
 	</head>
 	<body
 		id="{{ page_title | handleize }}"
