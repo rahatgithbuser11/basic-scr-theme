@@ -18,5 +18,29 @@
                 "label": "Logo"
             }
         ]
+    },
+     
+    {
+            "name": "footer",
+            "settings": [
+      {
+        "type": "text",
+        "id": "footer_text",
+        "label": "Footer text",
+        "default": "© 2025 My Practice Store"
+      },
+      {
+        "type": "color",
+        "id": "footer_bg",
+        "label": "Footer background color",
+        "default": "#1297bd"
+      },
+      {
+        "type": "color",
+        "id": "footer_text_color",
+        "label": "Footer text color",
+        "default": "#ffffff"
+      }
+    ]
     }
 ]
