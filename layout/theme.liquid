@@ -19,10 +19,13 @@
 		{% comment %} header {% endcomment %}
 		{% comment %} test {% endcomment %}
 		{% sections 'header-group' %}
+		{% section 'banner' %}
+		
+		{% comment %} main content {% endcomment %}
 		<main>
 			{{ content_for_layout }}
 		</main>
-		{% sections 'footer-group' %}
+		
 		{% comment %} all js {% endcomment %}
 		<script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'popper.js' | asset_url }}" defer="defer"></script>
