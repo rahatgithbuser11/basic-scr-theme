@@ -9,10 +9,8 @@
 		<title>{{ page_title }}</title>
 		{% comment %} all css {% endcomment %}
 		{{ 'boostrap.css' | asset_url | stylesheet_tag }}
-		{{ 'base.css' | asset_url | stylesheet_tag }}
-		{{ 'style.css' | asset_url | stylesheet_tag }}
+		{{ 'style.css' | | asset_url | | stylesheet_tag }}
 		{{ content_for_header }}
-       
 	</head>
 	<body
 		id="{{ page_title | handleize }}"
@@ -20,14 +18,13 @@
 	>
 		{% comment %} header {% endcomment %}
 		{% comment %} test {% endcomment %}
-        {% sections 'header-group' %}
+		{% sections 'header-group' %}
 		<main>
 			{{ content_for_layout }}
 		</main>
-
+		{% sections 'footer-group' %}
 		{% comment %} all js {% endcomment %}
 		<script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'popper.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'bootstrap.min.js' | asset_url }}" defer="defer"></script>
-
-	
+		

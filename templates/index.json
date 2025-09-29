@@ -9,12 +9,27 @@
  */
 {
   "sections": {
+    "banner": {
+      "type": "banner",
+      "settings": {}
+    },
     "featured_collcetion": {
       "type": "featured-collection",
-      "settings": {}
+      "settings": {
+        "col_num": 4
+      }
+    },
+    "featured_collcetion_product": {
+      "type": "featured-collection-product",
+      "settings": {
+        "padding": 100,
+        "collection": "automated-collection"
+      }
     }
   },
   "order": [
-    "featured_collcetion"
+    "banner",
+    "featured_collcetion",
+    "featured_collcetion_product"
   ]
 }

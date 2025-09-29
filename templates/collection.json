@@ -8,17 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "type": "header",
-  "name": "Header",
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {
-        "menu": "header-menu"
-      }
-    }
+    "collection": {
+      "type": "main-collection",
+      "settings": {}
+    },
   },
   "order": [
-    "header"
+    "collection",
   ]
 }

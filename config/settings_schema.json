@@ -1,13 +1,12 @@
 
-
 [
     {
         "name": "theme_info",
-        "theme_name": "Rahat scratch theme",
+        "theme_name": "LWT Basic Theme",
         "theme_version": "1.0.0",
-        "theme_author": "Rahat",
-        "theme_documentation_url": "https://basic-scr-theme.myshopify.com",
-        "theme_support_url": "https://basic-scr-theme.myshopify.com"
+        "theme_author": "LWT",
+        "theme_documentation_url": "https://lwt-basic-theme.myshopify.com",
+        "theme_support_url": "https://lwt-basic-theme.myshopify.com"
     },
     {
         "name": "logo",
@@ -18,5 +17,5 @@
                 "label": "Logo"
             }
         ]
-    },
-  ]  
+    }
+]

@@ -8,17 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "type": "header",
-  "name": "Header",
   "sections": {
-    "header": {
-      "type": "header",
-      "settings": {
-        "menu": "header-menu"
-      }
+    "main_product": {
+      "type": "main-product",
+      "settings": {}
     }
   },
   "order": [
-    "header"
+    "main_product"
   ]
 }
