@@ -9,7 +9,13 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/snowboard_wax.png",
+    "logo": "shopify://shop_images/theme_cover_image.jpg",
+    "sections": {
+      "banner": {
+        "type": "banner",
+        "settings": {}
+      }
+    },
     "content_for_index": []
   }
 }
