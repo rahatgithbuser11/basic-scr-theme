@@ -9,12 +9,17 @@
  */
 {
   "sections": {
-    "featured_collcetion": {
+    "featured_collection_KiP4B8": {
       "type": "featured-collection",
-      "settings": {}
+      "name": "Featured Collection",
+      "settings": {
+        "title": "Featured Collection",
+        "collection": "automated-collection",
+        "product_limit": 4
+      }
     }
   },
   "order": [
-    "featured_collcetion"
+    "featured_collection_KiP4B8"
   ]
 }
