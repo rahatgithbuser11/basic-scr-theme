@@ -1,7 +1,54 @@
-<div class="container">
-	<div class="row">
-		<div class="col-12">
-			<h1 class="py-5 my-5 text-center bg-info">Rahat's New Theme</h1>
+<div class="{% if section.settings.container_class %}container{% endif %}">
+	<div class="{% if section.settings.row_class %}row{% endif %}">
+		<div class="{% if section.settings.col-12_class %}col-12{% endif %}">
+			<h1 class="{% if section.settings.py-5_class %}py-5{% endif %} {% if section.settings.my-5_class %}my-5{% endif %} {% if section.settings.text-center_class %}text-center{% endif %} {% if section.settings.bg-info_class %}bg-info{% endif %}">
+				Rahat's New Theme
+			</h1>
 		</div>
 	</div>
 </div>
+
+{% schema %}
+{
+	"name": "Banner Header Section",
+	"settings": [
+		{
+			"type": "text",
+			"id": "container",
+			"label": "Container",
+			"default": "container"
+		},
+		{
+			"type": "text",
+			"id": "row",
+			"label": "Row",
+			"default": "row"
+		},
+		{
+			"type": "text",
+			"id": "col_12",
+			"label": "Col 12",
+			"default": "col-12"
+		},
+		{
+			"type": "text",
+			"id": "py_5_my_5_text_center_bg_info",
+			"label": "Py 5 my 5 text Center bg Info",
+			"default": "py-5 my-5 text-center bg-info"
+		}
+	],
+	"blocks": [],
+	"max_blocks": 1,
+	"presets": [
+		{
+			"name": "Banner Header Section",
+			"settings": {
+				"container": "container",
+				"row": "row",
+				"col_12": "col-12",
+				"py_5_my_5_text_center_bg_info": "py-5 my-5 text-center bg-info"
+			}
+		}
+	]
+}
+{% endschema %}
