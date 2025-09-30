@@ -17,7 +17,7 @@
         "info_JRjdQg": {
           "type": "info",
           "settings": {
-            "title": "Compny Info",
+            "title": "Company Info",
             "content": "<p>Ready to transform your business with cutting-edge technology & innovative strategies? From website development to digital marketing, we offer solutions that drive growth, enhance customer engagement, and maximize your success.Request Full Quote</p>"
           }
         },
@@ -25,7 +25,7 @@
           "type": "link",
           "settings": {
             "title": "Useful links",
-            "menu": "header-menu"
+            "menu": "main-menu"
           }
         },
         "link_iwGgDQ": {
@@ -39,7 +39,7 @@
           "type": "link",
           "settings": {
             "title": "Social links",
-            "menu": "header-menu"
+            "menu": "customer-account-main-menu"
           }
         }
       },
