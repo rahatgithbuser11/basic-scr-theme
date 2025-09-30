@@ -1,15 +1,16 @@
 <section class="featured-collection">
 	<div class="page-width">
 		{% if section.settings.title != blank %}
-			<h2 class="section-title">{{ section.settings.title }}</h2>
+			<h2 class="section-title text-center">{{ section.settings.title }}</h2>
 		{% endif %}
 
 		{% if section.settings.collection != blank %}
 			{% assign featured_collection = collections[section.settings.collection] %}
+
 			{% if featured_collection.products.size > 0 %}
-				<div class="grid grid--uniform">
-					{% for product in featured_collection.products limit: section.settings.product_limit %}
-						<div class="grid__item">
+				<div class="featured-grid">
+					{% for product in featured_collection.products limit: 4 %}
+						<div class="featured-grid__item">
 							{% render 'product-card', product: product %}
 						</div>
 					{% endfor %}
@@ -22,6 +23,30 @@
 		{% endif %}
 	</div>
 </section>
+
+<style>
+	.featured-collection .featured-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px; /* space between products */
+	}
+
+	.featured-collection .featured-grid__item {
+		background: #fff;
+		border: 1px solid #e5e5e5;
+		text-align: center;
+		padding: 15px;
+		height: 350px; /* fixed height */
+		width: 100%; /* makes them equal width in the grid */
+		overflow: hidden;
+	}
+
+	.featured-collection .featured-grid__item img {
+		max-height: 200px; /* control image height */
+		object-fit: contain;
+		margin: 0 auto 10px;
+	}
+</style>
 
 {% schema %}
 {
@@ -37,15 +62,6 @@
 			"type": "collection",
 			"id": "collection",
 			"label": "Collection"
-		},
-		{
-			"type": "range",
-			"id": "product_limit",
-			"label": "Number of products to show",
-			"min": 2,
-			"max": 12,
-			"step": 1,
-			"default": 4
 		}
 	],
 	"presets": [
