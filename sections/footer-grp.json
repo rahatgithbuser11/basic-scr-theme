@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "info_JRjdQg": {
+          "type": "info",
+          "settings": {
+            "title": "Compny Info",
+            "content": "<p>Ready to transform your business with cutting-edge technology and innovative strategies? From website development to digital marketing, we offer solutions that drive growth, enhance customer engagement, and maximize your success.Request Full Quote</p>"
+          }
+        },
+        "link_d6jVfg": {
+          "type": "link",
+          "settings": {
+            "title": "Useful links",
+            "menu": "header-menu"
+          }
+        },
+        "link_iwGgDQ": {
+          "type": "link",
+          "settings": {
+            "title": "Account",
+            "menu": "customer-account-main-menu"
+          }
+        },
+        "link_jq4tig": {
+          "type": "link",
+          "settings": {
+            "title": "Social links",
+            "menu": "header-menu"
+          }
+        }
+      },
+      "block_order": [
+        "info_JRjdQg",
+        "link_d6jVfg",
+        "link_iwGgDQ",
+        "link_jq4tig"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
