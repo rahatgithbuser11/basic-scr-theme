@@ -28,21 +28,22 @@
 	.featured-collection .featured-grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: 20px; /* space between products */
+		gap: 10px;
+		height: auto; /* space between products */
 	}
 
 	.featured-collection .featured-grid__item {
-		background: #fff;
-		border: 1px solid #e5e5e5;
+		background: #ffffff;
+
 		text-align: center;
-		padding: 15px;
-		height: 350px; /* fixed height */
+		padding: 25px;
+		height: 550px; /* fixed height */
 		width: 100%; /* makes them equal width in the grid */
 		overflow: hidden;
 	}
 
 	.featured-collection .featured-grid__item img {
-		max-height: 200px; /* control image height */
+		max-height: 300px; /* control image height */
 		object-fit: contain;
 		margin: 0 auto 10px;
 	}
