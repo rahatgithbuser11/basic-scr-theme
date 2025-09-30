@@ -6,10 +6,10 @@
 		{% else %}
 			{%- assign col_width = 12 -%}
 		{%- endif -%}
+
 		{% for block in section.blocks %}
 			{%- case block.type -%}
 				{%- when 'info' -%}
-					{% comment %} col_width  = 12 / column_number {% endcomment %}
 					<div class="col-lg-{{ col_width }}" {{ block.shopify_attributes }}>
 						<div class="footer-widget">
 							<h4>{{ block.settings.title }}</h4>
@@ -18,6 +18,7 @@
 							</div>
 						</div>
 					</div>
+
 				{%- when 'link' -%}
 					<div class="col-lg-{{ col_width }}" {{ block.shopify_attributes }}>
 						<div class="footer-widget">
@@ -31,12 +32,44 @@
 							</ul>
 						</div>
 					</div>
+
+				{%- when 'social_link' -%}
+					<div class="col-lg-{{ col_width }}" {{ block.shopify_attributes }}>
+						<div class="footer-widget">
+							<h4>{{ block.settings.title }}</h4>
+							<ul class="footer-icons">
+								{% if block.settings.facebook_url != blank %}
+									<li>
+										<a href="{{ block.settings.facebook_url }}" target="_blank" rel="noopener">
+											<i class="fab fa-facebook-f"></i>
+										</a>
+									</li>
+								{% endif %}
+								{% if block.settings.instagram_url != blank %}
+									<li>
+										<a href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener">
+											<i class="fab fa-instagram"></i>
+										</a>
+									</li>
+								{% endif %}
+								{% if block.settings.twitter_url != blank %}
+									<li>
+										<a href="{{ block.settings.twitter_url }}" target="_blank" rel="noopener">
+											<i class="fab fa-twitter"></i>
+										</a>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+
 				{%- else -%}
 					please add blocks from theme editor
 			{%- endcase -%}
 		{% endfor %}
 	</div>
 </section>
+
 {% schema %}
 {
 	"name": "Footer",
@@ -52,31 +85,59 @@
 					"type": "text",
 					"id": "title",
 					"label": "Title",
-					"default": "Compny Info"
+					"default": "Company Info"
 				},
 				{
 					"type": "richtext",
 					"id": "content",
 					"label": "Content",
-					"default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eos atque distinctio magnam dolore!Modi sapiente pariatur mollitia dignissimos molestiae.</p>"
+					"default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eos atque distinctio magnam dolore!</p>"
 				}
 			]
 		},
 		{
 			"type": "link",
-			"name": "Important link",
+			"name": "Important links",
 			"limit": 3,
 			"settings": [
 				{
 					"type": "text",
 					"id": "title",
 					"label": "Title",
-					"default": "Important link"
+					"default": "Important links"
 				},
 				{
 					"type": "link_list",
 					"id": "menu",
 					"label": "Menu"
+				}
+			]
+		},
+		{
+			"type": "social_link",
+			"name": "Social Links",
+			"limit": 1,
+			"settings": [
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title",
+					"default": "Follow us"
+				},
+				{
+					"type": "url",
+					"id": "facebook_url",
+					"label": "Facebook URL"
+				},
+				{
+					"type": "url",
+					"id": "instagram_url",
+					"label": "Instagram URL"
+				},
+				{
+					"type": "url",
+					"id": "twitter_url",
+					"label": "Twitter URL"
 				}
 			]
 		}
@@ -92,7 +153,13 @@
 			{
 				"type": "link",
 				"settings": {
-					"title": "Important link"
+					"title": "Useful links"
+				}
+			},
+			{
+				"type": "social_link",
+				"settings": {
+					"title": "Follow us"
 				}
 			}
 		]
