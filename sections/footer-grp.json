@@ -41,13 +41,23 @@
             "title": "Social links",
             "menu": "customer-account-main-menu"
           }
+        },
+        "social_link_JGdkPb": {
+          "type": "social_link",
+          "settings": {
+            "title": "Follow us",
+            "facebook_url": "https://facebook.com",
+            "instagram_url": "https://instagaram.com",
+            "twitter_url": ""
+          }
         }
       },
       "block_order": [
         "info_JRjdQg",
         "link_d6jVfg",
         "link_iwGgDQ",
-        "link_jq4tig"
+        "link_jq4tig",
+        "social_link_JGdkPb"
       ],
       "settings": {}
     }
