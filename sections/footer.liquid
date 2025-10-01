@@ -23,6 +23,27 @@
 					<div class="col-lg-{{ col_width }}" {{ block.shopify_attributes }}>
 						<div class="footer-widget">
 							<h4>{{ block.settings.title }}</h4>
+							<ul class="footer-links">
+								{% if block.settings.menu != blank %}
+									{% assign menu = menus[block.settings.menu] %}
+									{% for link in menu.links %}
+										<li>
+											<a href="{{ link.url }}">
+												{{ link.title }}
+											</a>
+										</li>
+									{% endfor %}
+								{% else %}
+									<p>Please select a menu in the block settings.</p>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+
+				{%- when 'link' -%}
+					<div class="col-lg-{{ col_width }}" {{ block.shopify_attributes }}>
+						<div class="footer-widget">
+							<h4>{{ block.settings.title }}</h4>
 							<ul>
 								{% for link in block.settings.menu.links %}
 									<li>
@@ -73,7 +94,7 @@
 {% schema %}
 {
 	"name": "Footer",
-	"class": "lwt-footer",
+	"class": "rahat-footer",
 	"settings": [],
 	"blocks": [
 		{
@@ -144,12 +165,7 @@
 	],
 	"default": {
 		"blocks": [
-			{
-				"type": "info",
-				"settings": {
-					"title": "Company info"
-				}
-			},
+			{ "type": "info", "settings": { "title": "Company info" } },
 			{
 				"type": "link",
 				"settings": {
