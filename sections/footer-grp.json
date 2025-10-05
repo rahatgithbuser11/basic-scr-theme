@@ -27,27 +27,11 @@
             "title": "Useful links",
             "menu": "main-menu"
           }
-        },
-        "link_iwGgDQ": {
-          "type": "link",
-          "settings": {
-            "title": "Account",
-            "menu": "customer-account-main-menu"
-          }
-        },
-        "link_jq4tig": {
-          "type": "link",
-          "settings": {
-            "title": "Social links",
-            "menu": "customer-account-main-menu"
-          }
         }
       },
       "block_order": [
         "info_JRjdQg",
-        "link_d6jVfg",
-        "link_iwGgDQ",
-        "link_jq4tig"
+        "link_d6jVfg"
       ],
       "settings": {}
     }
