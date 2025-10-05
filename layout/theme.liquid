@@ -12,8 +12,7 @@
 		{{ 'style.css' | | asset_url | | stylesheet_tag }}
 		{{ content_for_header }}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <script src="{{ 'com.js' | asset_url }}" defer></script>
-
+		<script src="{{ 'com.js' | asset_url }}" defer></script>
 	</head>
 	<body
 		id="{{ page_title | handleize }}"
@@ -23,7 +22,7 @@
 		{% comment %} test {% endcomment %}
 		{% sections 'header-group' %}
 		{% section 'banner' %}
-		
+
 		{% comment %} main content {% endcomment %}
 		<main>
 			{{ content_for_layout }}
@@ -33,4 +32,5 @@
 		<script src="{{ 'jquery.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'popper.js' | asset_url }}" defer="defer"></script>
 		<script src="{{ 'bootstrap.min.js' | asset_url }}" defer="defer"></script>
-		
+	</body>
+</html>
