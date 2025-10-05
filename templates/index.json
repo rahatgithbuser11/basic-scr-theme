@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "all_products_rRP9mE": {
+    "all_products_cmVAmj": {
       "type": "all-products",
       "name": "All Products Grid (Load More)",
       "settings": {
@@ -20,6 +20,6 @@
     }
   },
   "order": [
-    "all_products_rRP9mE"
+    "all_products_cmVAmj"
   ]
 }
