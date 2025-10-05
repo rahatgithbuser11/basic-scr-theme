@@ -110,7 +110,7 @@
 				btn.disabled = true
 
 				// Use current pathname so Liquid paginate picks up `page` correctly
-				const url = `${window.location.pathname}?sections=${sectionName}&page=${page}`
+				const url = `${window.location.pathname}?sections=${all - products}&page=${page}`
 
 				fetch(url)
 					.then(res => {
@@ -118,13 +118,13 @@
 						return res.json()
 					})
 					.then(data => {
-						if (!data || !data[sectionName] || !data[sectionName].html) {
+						if (!data || !data[all - products] || !data[all - products].html) {
 							throw new Error('Invalid section response')
 						}
 
 						// Insert returned HTML into a temp container and extract new items
 						const temp = document.createElement('div')
-						temp.innerHTML = data[sectionName].html
+						temp.innerHTML = data[all - products].html
 
 						const selector = `#AllProductsSection-${sectionId} .grid__item`
 						const newItems = temp.querySelectorAll(selector)
