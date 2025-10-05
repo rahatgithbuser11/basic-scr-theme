@@ -1,69 +1,18 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Footer",
   "sections": {
     "1759643718e408c69e": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_88b7fdc_DRjPPp": {
-          "type": "ai_gen_block_88b7fdc",
-          "settings": {
-            "max_width": 800,
-            "section_padding": 60,
-            "item_spacing": 40,
-            "line_color": "#e0e0e0",
-            "active_line_color": "#007acc",
-            "dot_size": 16,
-            "dot_color": "#ffffff",
-            "dot_border_color": "#e0e0e0",
-            "active_dot_color": "#007acc",
-            "active_dot_border_color": "#007acc",
-            "content_bg_color": "#ffffff",
-            "content_padding": 25,
-            "content_border_radius": 8,
-            "content_accent_color": "#e0e0e0",
-            "active_content_accent_color": "#007acc",
-            "date_color": "#666666",
-            "active_date_color": "#007acc",
-            "title_color": "#333333",
-            "active_title_color": "#007acc",
-            "description_color": "#666666",
-            "active_description_color": "#333333",
-            "date_font_size": 12,
-            "title_font_size": 20,
-            "description_font_size": 14,
-            "item_1_enabled": true,
-            "item_1_date": "2020",
-            "item_1_title": "Company Founded",
-            "item_1_description": "Started our journey with a vision to create amazing products.",
-            "item_2_enabled": true,
-            "item_2_date": "2021",
-            "item_2_title": "First Product Launch",
-            "item_2_description": "Launched our flagship product that changed everything.",
-            "item_3_enabled": true,
-            "item_3_date": "2022",
-            "item_3_title": "Major Expansion",
-            "item_3_description": "Expanded to new markets and reached thousands of customers.",
-            "item_4_enabled": true,
-            "item_4_date": "2023",
-            "item_4_title": "Innovation Award",
-            "item_4_description": "Received recognition for our innovative approach to business.",
-            "item_5_enabled": false,
-            "item_5_date": "",
-            "item_5_title": "",
-            "item_5_description": "",
-            "item_6_enabled": false,
-            "item_6_date": "",
-            "item_6_title": "",
-            "item_6_description": ""
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_88b7fdc_DRjPPp"
-      ],
       "settings": {}
     },
     "footer": {
