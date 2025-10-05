@@ -16,19 +16,9 @@
       "settings": {
         "menu": "main-menu"
       }
-    },
-    "all_porducts_MywifE": {
-      "type": "all-porducts",
-      "name": "All Products Grid (Load More)",
-      "settings": {
-        "collection": "automated-collection",
-        "products_per_row": 1,
-        "products_limit": 3
-      }
     }
   },
   "order": [
-    "header",
-    "all_porducts_MywifE"
+    "header"
   ]
 }
