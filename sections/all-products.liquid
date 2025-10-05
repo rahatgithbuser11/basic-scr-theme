@@ -92,7 +92,6 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
-		// process all instances on the page (if more than one section)
 		document.querySelectorAll('[id^="AllProductsSection-"]').forEach(section => {
 			const btn = section.querySelector('.load-more-btn')
 			if (!btn) return
@@ -101,55 +100,39 @@
 			const limit = parseInt(section.dataset.productsLimit || '0', 10)
 			const sectionId = section.dataset.sectionId
 			const total = parseInt(section.dataset.collectionTotal || '0', 10)
-			const sectionName = 'all-products' // must match your section file name (without .liquid)
+			const sectionName = 'all-products' // ✅ your section file name
 
 			btn.addEventListener('click', () => {
 				const page = parseInt(btn.dataset.page || '2', 10)
-
 				btn.textContent = 'Loading...'
 				btn.disabled = true
 
-				// Use current pathname so Liquid paginate picks up `page` correctly
 				const url = `${window.location.pathname}?sections=${sectionName}&page=${page}`
 
 				fetch(url)
-					.then(res => {
-						// Shopify returns JSON with keys for each section
-						return res.json()
-					})
+					.then(res => res.json())
 					.then(data => {
 						if (!data || !data[sectionName] || !data[sectionName].html) {
 							throw new Error('Invalid section response')
 						}
 
-						// Insert returned HTML into a temp container and extract new items
 						const temp = document.createElement('div')
 						temp.innerHTML = data[sectionName].html
 
 						const selector = `#AllProductsSection-${sectionId} .grid__item`
 						const newItems = temp.querySelectorAll(selector)
 
-						// Append new items to the existing grid
-						newItems.forEach(item => {
-							// Move the node (imported into current DOM)
-							grid.appendChild(item)
-						})
+						newItems.forEach(item => grid.appendChild(item))
 
-						// Count appended items and total items in grid
 						const currentCount = grid.querySelectorAll('.grid__item').length
-
-						// If we have loaded all products, hide the button
 						if (total && currentCount >= total) {
 							btn.style.display = 'none'
+						} else if (newItems.length < limit) {
+							btn.style.display = 'none'
 						} else {
-							// If fewer items than batch size arrived, it's last page
-							if (newItems.length < limit) {
-								btn.style.display = 'none'
-							} else {
-								btn.dataset.page = page + 1
-								btn.textContent = 'Load More'
-								btn.disabled = false
-							}
+							btn.dataset.page = page + 1
+							btn.textContent = 'Load More'
+							btn.disabled = false
 						}
 					})
 					.catch(err => {
