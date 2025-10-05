@@ -9,9 +9,9 @@
 	data-products-per-row="{{ section.settings.products_per_row }}"
 	data-products-limit="{{ section.settings.products_limit }}"
 	{% if section.settings.collection != blank %}
-		{% assign _collection = collections[section.settings.collection] %}
+		{% assign collection = collections[section.settings.collection] %}
 		data-collection-handle="{{ section.settings.collection }}"
-		data-collection-total="{{ _collection.products_count }}"
+		data-collection-total="{{ collection.products_count }}"
 	{% endif %}
 >
 	<div class="page-width">
