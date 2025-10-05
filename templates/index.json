@@ -10,7 +10,7 @@
 {
   "sections": {
     "all_porducts_D66Me7": {
-      "type": "all-porducts",
+      "type": "all-products",
       "name": "All Products Grid (Load More)",
       "settings": {
         "collection": "automated-collection",
