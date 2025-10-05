@@ -14,7 +14,7 @@
       "name": "Featured Collection",
       "settings": {
         "title": "Featured Collection",
-        "collection": "automated-collection"
+        "collection": "all-products"
       }
     }
   },
