@@ -9,17 +9,17 @@
  */
 {
   "sections": {
-    "featured_collection_KiP4B8": {
-      "type": "featured-collection",
-      "name": "Featured Collection",
+    "all_porducts_D66Me7": {
+      "type": "all-porducts",
+      "name": "All Products Grid (Load More)",
       "settings": {
-        "title": "Featured Collection",
         "collection": "automated-collection",
-        "product_limit": 4
+        "products_per_row": 3,
+        "products_limit": 3
       }
     }
   },
   "order": [
-    "featured_collection_KiP4B8"
+    "all_porducts_D66Me7"
   ]
 }

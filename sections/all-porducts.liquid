@@ -1,17 +1,18 @@
 {% comment %}
-	All Products Section with AJAX "Load More"
-	- Merchant selects a collection
-	- Controls number of products per row
-	- Supports dynamic load more (AJAX)
+	All Products Section with AJAX "Load More" (fixed)
 {% endcomment %}
 
 <section
 	id="AllProductsSection-{{ section.id }}"
 	class="all-products-section"
 	data-section-id="{{ section.id }}"
-	data-collection-handle="{{ section.settings.collection }}"
 	data-products-per-row="{{ section.settings.products_per_row }}"
 	data-products-limit="{{ section.settings.products_limit }}"
+	{% if section.settings.collection != blank %}
+		{% assign _collection = collections[section.settings.collection] %}
+		data-collection-handle="{{ section.settings.collection }}"
+		data-collection-total="{{ _collection.products_count }}"
+	{% endif %}
 >
 	<div class="page-width">
 		{% if section.settings.collection != blank %}
@@ -75,7 +76,6 @@
 		text-align: center;
 		margin-top: 2rem;
 	}
-
 	.load-more-btn {
 		background: #000;
 		color: #fff;
@@ -83,70 +83,88 @@
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
-		transition: background 0.2s;
 	}
-
-	.load-more-btn:hover {
-		background: #333;
+	.load-more-btn[disabled] {
+		opacity: 0.6;
+		cursor: default;
 	}
 </style>
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
-		const section = document.querySelector('[id^="AllProductsSection-"]')
-		if (!section) return
+		// process all instances on the page (if more than one section)
+		document.querySelectorAll('[id^="AllProductsSection-"]').forEach(section => {
+			const btn = section.querySelector('.load-more-btn')
+			if (!btn) return
 
-		const btn = section.querySelector('.load-more-btn')
-		const grid = section.querySelector('.grid')
-		const collectionHandle = section.dataset.collectionHandle
-		const limit = parseInt(section.dataset.productsLimit)
-		const perRow = section.dataset.productsPerRow
-		const sectionId = section.dataset.sectionId
+			const grid = section.querySelector('.grid')
+			const limit = parseInt(section.dataset.productsLimit || '0', 10)
+			const sectionId = section.dataset.sectionId
+			const total = parseInt(section.dataset.collectionTotal || '0', 10)
+			const sectionName = 'all-products' // must match your section file name (without .liquid)
 
-		if (!btn) return
+			btn.addEventListener('click', () => {
+				const page = parseInt(btn.dataset.page || '2', 10)
 
-		btn.addEventListener('click', () => {
-			const page = parseInt(btn.dataset.page)
+				btn.textContent = 'Loading...'
+				btn.disabled = true
 
-			btn.textContent = 'Loading...'
-			btn.disabled = true
+				// Use current pathname so Liquid paginate picks up `page` correctly
+				const url = `${window.location.pathname}?sections=${sectionName}&page=${page}`
 
-			fetch(`/?sections=all-products&handle=${collectionHandle}&page=${page}`)
-				.then(res => res.text())
-				.then(html => {
-					// Parse the new product HTML
-					const temp = document.createElement('div')
-					temp.innerHTML = html
+				fetch(url)
+					.then(res => {
+						// Shopify returns JSON with keys for each section
+						return res.json()
+					})
+					.then(data => {
+						if (!data || !data[sectionName] || !data[sectionName].html) {
+							throw new Error('Invalid section response')
+						}
 
-					const newGrid = temp.querySelector(`#AllProductsSection-${sectionId} .grid`)
-					if (newGrid) {
-						newGrid.querySelectorAll('.grid__item').forEach(item => {
+						// Insert returned HTML into a temp container and extract new items
+						const temp = document.createElement('div')
+						temp.innerHTML = data[sectionName].html
+
+						const selector = `#AllProductsSection-${sectionId} .grid__item`
+						const newItems = temp.querySelectorAll(selector)
+
+						// Append new items to the existing grid
+						newItems.forEach(item => {
+							// Move the node (imported into current DOM)
 							grid.appendChild(item)
 						})
 
-						// Increment page number
-						btn.dataset.page = page + 1
+						// Count appended items and total items in grid
+						const currentCount = grid.querySelectorAll('.grid__item').length
 
-						// If no more products, hide button
-						if (newGrid.querySelectorAll('.grid__item').length < limit) {
+						// If we have loaded all products, hide the button
+						if (total && currentCount >= total) {
 							btn.style.display = 'none'
 						} else {
-							btn.textContent = 'Load More'
-							btn.disabled = false
+							// If fewer items than batch size arrived, it's last page
+							if (newItems.length < limit) {
+								btn.style.display = 'none'
+							} else {
+								btn.dataset.page = page + 1
+								btn.textContent = 'Load More'
+								btn.disabled = false
+							}
 						}
-					}
-				})
-				.catch(err => {
-					console.error(err)
-					btn.textContent = 'Error'
-				})
+					})
+					.catch(err => {
+						console.error('Load more failed:', err)
+						btn.textContent = 'Load More'
+						btn.disabled = false
+					})
+			})
 		})
 	})
 </script>
 
 {% schema %}
 {
-	"name": "All Products ",
+	"name": "All Products (Load More)",
 	"settings": [
 		{
 			"type": "collection",
