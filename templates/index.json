@@ -11,11 +11,11 @@
   "sections": {
     "featured_collection_KiP4B8": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "Featured Collection",
       "settings": {
-        "title": "Featured Collection",
-        "collection": "automated-collection",
-        "product_limit": 4
+        "title": "All Products",
+        "collection": "automated-collection"
       }
     }
   },
