@@ -9,17 +9,16 @@
  */
 {
   "sections": {
-    "all_products_cmVAmj": {
-      "type": "all-products",
-      "name": "All Products Grid (Load More)",
+    "featured_collection_kexAah": {
+      "type": "featured-collection",
+      "name": "Featured Collection",
       "settings": {
-        "collection": "automated-collection",
-        "products_per_row": 3,
-        "products_limit": 3
+        "title": "Featured Collection",
+        "collection": "automated-collection"
       }
     }
   },
   "order": [
-    "all_products_cmVAmj"
+    "featured_collection_kexAah"
   ]
 }
