@@ -9,13 +9,13 @@
  */
 {
   "sections": {
-    "all_porducts_D66Me7": {
+    "all_products_ELjVyb": {
       "type": "all-products",
       "name": "All Products Grid (Load More)",
       "settings": {
         "collection": "automated-collection",
         "products_per_row": 3,
-        "products_limit": 3
+        "products_limit": 9
       }
     }
   },
